@@ -6,7 +6,9 @@
   "directories": {
     "lib": "lib"
   },
-  "dependencies": {},
+  "dependencies": {
+    "fs": "0.0.1-security"
+  },
   "devDependencies": {
     "eslint": "^4.12.0",
     "jest": "^21.2.1"
