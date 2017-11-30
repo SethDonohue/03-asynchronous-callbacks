@@ -1,23 +1,17 @@
 'use strict';
 
-const fp = require('../lib/fp.js');
+const reader = require('../lib/reader.js');
 
-describe('fp.test.js', () => {
-  describe('tests for fp.map', () => {
+const paths = [`${__dirname}/../assets/data1.txt`, `${__dirname}/../assets/data2.txt`, `${__dirname}/../assets/data3.txt`];
 
-    test('fp.map should return a new array of elements with the callback function enacted on each of the original array elements, if no errors are present', () => {
-      expect(fp.map(
-        x => x * 2,
-        [1,2,3]
-      )).toEqual([2,4,6]);
-    });
+describe('reader.readAll', () => {
 
-    test('An exception should be thrown if collection is not an array', () => {
-      expect(
-        () => {
-          fp.map(
-            (x => x * 2),
-            'string, not array');
-        }).toThrow();
+  test('fs.readFile should return a callback with the result being the data of the file read', (done) => {
+    reader.readAll(paths, (err, data) => {
+      expect(err).toBeNull();
+      expect(data).toEqual(`animals cats dogs dinosaurs
+`);
+      done();
     });
   });
+});

@@ -1,4 +1,1 @@
-animals
-reptiles
-turtles
-mice
+animals reptiles turtles mice
