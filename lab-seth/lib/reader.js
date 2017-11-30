@@ -24,3 +24,22 @@ reader.readAll = (paths, callback) => {
     });
   });
 };
+
+// NOTES FROM VINICIO
+//recursive method, this would go on line 11 where fs.readFile is defined
+
+// function readFilesRecursively() {
+//   if(paths.length === 0) //this is the base case to stop recursion
+//     callback(null, fileInfo);
+//   else {
+//     fs.readFile(paths.shift(),(error,data) => {
+//       //inside here is the file or the error
+//       if(error)
+//         callback(error); //Return error
+//
+//       results.push(data.toString());
+//       readFilesRecursively();
+//     });
+//
+//   }
+// }
